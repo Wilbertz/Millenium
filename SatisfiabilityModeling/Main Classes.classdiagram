@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="fb91e41a-b3ad-42df-909b-095561483b91" name="Main classes" linkedPackageId="a4b36dec-2707-48d6-b219-74c1d9d76450" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="4afac10a-6036-4bf2-807c-f0f68a5ec5d3" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="d3304ca4-4284-4fb1-b93f-f5e156f5bdf4" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="495424f7-b75e-4dd0-83a9-35c531cd2518">
+          <propertyInstance Id="46c993b2-f621-48d8-a0eb-3172aee99016" name="BaseName">
+            <elementDefinition Id="2eda36ce-67b9-4677-90ab-825949492bf1" />
+          </propertyInstance>
+          <elementDefinition Id="229e168f-2ee0-4adb-ab07-15fa7967acc1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="320e594e-9f75-4c4f-819d-ce30030ce06e">
+          <propertyInstance Id="26da88ac-5881-44af-b5cf-711db3928e4b" name="ClrAttributes">
+            <elementDefinition Id="366f4c90-e918-4bb7-bb6c-8b3cfc46d1df" />
+          </propertyInstance>
+          <elementDefinition Id="2ef4f08f-f70f-46e4-aee3-5ed449859af3" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="4fea93e4-514e-4ec1-bd83-f1dcb7fb0782">
+          <propertyInstance Id="23fd3d2b-af4a-422d-b7b3-7450c30f4234" name="Usings">
+            <elementDefinition Id="b9dcdc88-c3d1-41fe-bb89-17951394f072" />
+          </propertyInstance>
+          <elementDefinition Id="91bac0c3-0679-47bd-975a-2419f296409b" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="720c0b94-643b-4631-85a9-ff4a9b50defd" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="12463970-e992-4366-94b2-0e4f21f4152d" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="5314d83d-e11c-4561-b086-f4776d51c031">
+          <propertyInstance Id="ae92c75b-1b31-46b5-868f-e808d47fad1c" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="7ac522ab-8082-4180-9252-84bf211a1e43" />
+          </propertyInstance>
+          <elementDefinition Id="62e2a71d-be33-4c37-851f-c17d79bf3018" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="a15264d8-4258-4e0f-b4a4-c89edc0a80ce">
+          <propertyInstance Id="af4b4d23-832a-4bf7-8523-b52375b1952b" name="TemplateFilePath" value="ClassTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="8b5afd40-d0ad-4b92-b6ca-9b0d223405f3" />
+          </propertyInstance>
+          <elementDefinition Id="f4090436-fd8e-4170-b462-29f3e7bd9cab" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="819a8182-612c-4b71-9909-e0a21311c6bc">
+          <propertyInstance Id="e679fc64-790d-4f32-bc7c-55fc4f633a4d" name="ProjectPath" value="ClassTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj|EnumTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj|InterfaceTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj|StructTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj">
+            <elementDefinition Id="b4a2f2c9-d317-40ab-909a-5c44a5e9d11d" />
+          </propertyInstance>
+          <elementDefinition Id="a12a4295-5c71-4211-bfca-99d028d31a3a" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="1acac9d8-9593-4481-8e27-e40634805ea6">
+          <propertyInstance Id="dd0bf2df-3c96-4cb1-8fb7-bb3433024b88" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="931126d0-5cb3-439c-8469-b2d8ce568bb6" />
+          </propertyInstance>
+          <elementDefinition Id="8efa5b63-8dca-4004-8a6b-93e740c09976" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="e6058d6a-8e55-4f53-93d2-c014d44c0347">
+          <propertyInstance Id="2ede968b-4592-4f67-812a-f03945e717a7" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="f8d2f1b8-15ac-463a-9818-a0e8dcfce95d" />
+          </propertyInstance>
+          <elementDefinition Id="f7df6bc3-7336-4af1-b50e-2a84fc6850cb" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="85ce448f-31ec-45d5-a19d-777d28ca122a">
+          <propertyInstance Id="7f3c1b2c-8a4a-4829-83ae-605476579c9a" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="56699781-d458-4c93-92c4-e06b3ece05f2" />
+          </propertyInstance>
+          <elementDefinition Id="07c2b96f-6283-41ab-b929-f2bb804a3315" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="e63e1bad-d882-465e-a647-e836a4761658">
+          <propertyInstance Id="f6a4a7b9-f701-4be5-8142-fe74ae1d2f55" name="Parameters">
+            <elementDefinition Id="02486817-7554-48e2-b4a0-91c3229b08fc" />
+          </propertyInstance>
+          <elementDefinition Id="51b7b74d-7523-423a-aca0-703a16ef090f" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="7ea2e82c-245f-45b4-97be-c7f40554fdf4">
+      <profileInstance Id="faa474d9-05b2-4000-ae47-f31379e5cecc" name="CSharpProfile">
+        <elementDefinition Id="257dd9f6-5622-422c-b473-fc14cbdcb9bf" />
+      </profileInstance>
+      <elementDefinition Id="056ee55c-3d32-4ba9-adcd-3c2ff498ea2a" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="eaa81871-50cb-4e81-b46c-be418456a818">
+      <profileInstance Id="5df192b0-acb9-427d-b942-f9974b84981b" name="TextTemplateBindings">
+        <elementDefinition Id="62867150-7bc0-46e3-b83e-9c5a80032e11" />
+      </profileInstance>
+      <elementDefinition Id="c890a569-5b02-40fa-96e0-36479a37eb1d" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="05f25278-52af-4c40-9760-538df94b7a75" name="Clause" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7652912e-54ea-4a78-86f7-2a30aa8d2c22" />
+        <suppliersInternal>
+          <interfaceRealization Id="0d5368ab-bed5-4bb6-9739-f9b655d709b4">
+            <interfaceMoniker Id="09ce2a9a-ebb8-4e69-ac1f-290d07a7de6a" LastKnownName="IClause" />
+            <elementDefinition Id="85709d0d-e49d-4284-b5c1-a73b9e367cdc" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="644b0d6e-1e7b-45c2-905d-29c7a40c491a" name="Formula" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9ec6f4b4-6db0-42fe-8a04-32db1309bdd8" />
+        <suppliersInternal>
+          <interfaceRealization Id="a61122bf-e199-4890-879c-864843078afd">
+            <interfaceMoniker Id="aaf1e747-8ec9-41cb-89b2-ecbe80889219" LastKnownName="IFormula" />
+            <elementDefinition Id="375818cc-daa8-4fe4-8295-78266a08ec43" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="e28caf03-8f5f-4309-bb5c-eda0a0326be4" isDerived="false" sourceEndRoleName="Formula" targetEndRoleName="Clause" isLeaf="false" isAbstract="false">
+            <classMoniker Id="05f25278-52af-4c40-9760-538df94b7a75" LastKnownName="Clause" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f998b53d-3339-4817-89c4-24da4bc9d301" name="Formula" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1d7ec474-8aa2-4780-b426-8b1ddcc0fe6d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43ce4f63-6778-4a3f-ab05-c1951d0f55e7" name="Clause" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="1d74eb6e-d4e7-494d-ac99-7f07a78d85df" name="Lower" value="*">
+                      <elementDefinition Id="e32a621f-26fa-43da-83ce-fa7ed63e8c28" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="82457a3c-c84c-483f-b2ba-2d8d428b9934" name="Upper" value="*">
+                      <elementDefinition Id="6a6d9540-e5ad-443b-baeb-0ab82f10ffef" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="ab50deec-021a-4ecf-9933-f31845baa504" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="dba5303d-c94e-4958-adea-c119ee8bf4ae" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="db3927e9-8073-4695-8275-7bb0e802b94a" name="AddClause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="acf8e6b8-407b-4832-9412-34040243afd9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e859257f-38c8-4ff5-a6c6-9a5adcba5822" name="clause" direction="In">
+                  <elementDefinition Id="a061f2cf-6701-407e-abe7-e001b494c481" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ab63ff66-f0e3-42b3-ad44-c807c3a84dd3" LastKnownName="IClause" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d12d2f09-fb49-477f-8ace-a88179037be6" name="RemoveClause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0816e171-6058-4ccd-9c14-0f3adafca1be" />
+          </operation>
+          <operation Id="dfb842c5-42f2-4ee4-9ff8-05468ae1044b" name="SubstituteAsTrue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="16cabae2-7c7e-4fda-8554-07404d2e44b2" />
+          </operation>
+          <operation Id="64964a9e-5e71-4c3c-a373-3448ae6dc4ee" name="SubstituteAsFalse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5308a157-0f70-4fd6-a527-174807894012" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="aaf1e747-8ec9-41cb-89b2-ecbe80889219" name="IFormula" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b581f63a-e808-4658-aa73-63b9d0aee35c" />
+        <ownedAttributes>
+          <property Id="66f8cb73-f36c-4644-8914-eb9a9d7c5734" name="IsConsistent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="771f4750-d80e-400c-91d8-b754dd1a0749" />
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation Id="2059fa97-420d-4432-9f04-2b55be46a7f0" name="AddClause" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d0d96709-996f-4687-b5a9-4414cf2abdf3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ebfc85ea-ed9d-49cf-9cda-d54e58751fb1" name="clause" direction="In">
+                  <elementDefinition Id="8c4d0857-3b89-4394-a5a4-7b9f32679044" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ab63ff66-f0e3-42b3-ad44-c807c3a84dd3" LastKnownName="IClause" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="18e91d21-d929-469a-b9db-83be454c7d57" name="RemoveClause" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0131df73-b898-470c-bbb1-c8af34a1e7ca" />
+          </operation>
+          <operation Id="c6f244a1-a321-45ab-ad38-aa06d33d93b6" name="SubstituteAsTrue" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="71296603-76a3-4c3b-8e0b-1515dca50830" />
+          </operation>
+          <operation Id="faeee2d9-c7b8-42a6-a0e7-a9bcf4fe3bdb" name="SubstituteAsFalse" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7981fe30-4992-4e67-bd38-87300e348208" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="09ce2a9a-ebb8-4e69-ac1f-290d07a7de6a" name="IClause" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0fe71eb4-b46f-40cd-915e-3668d5d6eec6" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="ab63ff66-f0e3-42b3-ad44-c807c3a84dd3" name="IClause" isAbstract="false" isLeaf="false" cachedFullName="SATModeling::IClause">
+        <elementDefinition Id="0fe71eb4-b46f-40cd-915e-3668d5d6eec6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4d908d6c-b64b-44c2-92d5-a7c1f581746a" name="SatisfiabilitySolver" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8f7f3047-da55-46a6-9e16-171298b6485b" />
+        <suppliersInternal>
+          <interfaceRealization Id="64a634b9-7dd7-48b8-9fab-68381613ab0d">
+            <interfaceMoniker Id="d7d1528f-5cd1-4937-a8b5-58156754c92b" LastKnownName="ISatisfiabilitySolver" />
+            <elementDefinition Id="96d5c5f3-8072-4e57-b2f1-506db10c81f9" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="eb1bdf1d-f38c-4d0a-a9bc-163d8577d200" name="Solve" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="83a42f45-b4b9-4c53-b85a-3bb9f6115e16" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="d7d1528f-5cd1-4937-a8b5-58156754c92b" name="ISatisfiabilitySolver" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="23babe35-6a12-4a4b-b05e-853fd46a05f2" />
+        <ownedOperations>
+          <operation Id="5db2a09b-e3f3-4189-9252-f5e808510910" name="Solve" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="538a0e66-fdab-48b2-a780-03716a59bd03" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="a4b36dec-2707-48d6-b219-74c1d9d76450" name="SatisfiabilityModeling">
+    <elementDefinition Id="68d0f045-24fa-420b-9b84-283979f1a40e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="271bd806-7444-4ae2-97d5-d1e9c53e2b50">
+        <profileInstance Id="fbe1d059-9686-4cc3-ac36-8b617a10a4d6" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="b1929cbe-929e-46ea-bb0c-25d70617f11b">
+        <profileInstance Id="fa87e305-71e0-4424-8386-ca09ee7b4f58" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

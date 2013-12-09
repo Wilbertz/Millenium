@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="68d0f045-24fa-420b-9b84-283979f1a40e"
+  name="SatisfiabilityModeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="d3304ca4-4284-4fb1-b93f-f5e156f5bdf4"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="229e168f-2ee0-4adb-ab07-15fa7967acc1">
+          <propertyInstance
+            Id="2eda36ce-67b9-4677-90ab-825949492bf1"
+            name="BaseName" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="2ef4f08f-f70f-46e4-aee3-5ed449859af3">
+          <propertyInstance
+            Id="366f4c90-e918-4bb7-bb6c-8b3cfc46d1df"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="91bac0c3-0679-47bd-975a-2419f296409b">
+          <propertyInstance
+            Id="b9dcdc88-c3d1-41fe-bb89-17951394f072"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance
+      Id="12463970-e992-4366-94b2-0e4f21f4152d"
+      name="TextTemplateBindings"
+      profile="TextTemplateBindings">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="62e2a71d-be33-4c37-851f-c17d79bf3018">
+          <propertyInstance
+            Id="7ac522ab-8082-4180-9252-84bf211a1e43"
+            name="Alias"
+            value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="f4090436-fd8e-4170-b462-29f3e7bd9cab">
+          <propertyInstance
+            Id="8b5afd40-d0ad-4b92-b6ca-9b0d223405f3"
+            name="TemplateFilePath"
+            value="ClassTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\StructTemplate.t4" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="a12a4295-5c71-4211-bfca-99d028d31a3a">
+          <propertyInstance
+            Id="b4a2f2c9-d317-40ab-909a-5c44a5e9d11d"
+            name="ProjectPath"
+            value="ClassTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj|EnumTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj|InterfaceTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj|StructTemplate=..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="8efa5b63-8dca-4004-8a6b-93e740c09976">
+          <propertyInstance
+            Id="931126d0-5cb3-439c-8469-b2d8ce568bb6"
+            name="TargetDirectory"
+            value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="f7df6bc3-7336-4af1-b50e-2a84fc6850cb">
+          <propertyInstance
+            Id="f8d2f1b8-15ac-463a-9818-a0e8dcfce95d"
+            name="TargetName"
+            value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="07c2b96f-6283-41ab-b929-f2bb804a3315">
+          <propertyInstance
+            Id="56699781-d458-4c93-92c4-e06b3ece05f2"
+            name="Overwrite"
+            value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="51b7b74d-7523-423a-aca0-703a16ef090f">
+          <propertyInstance
+            Id="02486817-7554-48e2-b4a0-91c3229b08fc"
+            name="Parameters" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="056ee55c-3d32-4ba9-adcd-3c2ff498ea2a">
+      <profileInstance
+        Id="257dd9f6-5622-422c-b473-fc14cbdcb9bf"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="c890a569-5b02-40fa-96e0-36479a37eb1d">
+      <profileInstance
+        Id="62867150-7bc0-46e3-b83e-9c5a80032e11"
+        name="TextTemplateBindings" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="7652912e-54ea-4a78-86f7-2a30aa8d2c22"
+        name="Clause"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="85709d0d-e49d-4284-b5c1-a73b9e367cdc">
+            <interfaceMoniker
+              Id="0fe71eb4-b46f-40cd-915e-3668d5d6eec6"
+              LastKnownName="IClause"
+              LastKnownLocation="SatisfiabilityModeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9ec6f4b4-6db0-42fe-8a04-32db1309bdd8"
+        name="Formula"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="375818cc-daa8-4fe4-8295-78266a08ec43">
+            <interfaceMoniker
+              Id="b581f63a-e808-4658-aa73-63b9d0aee35c"
+              LastKnownName="IFormula"
+              LastKnownLocation="SatisfiabilityModeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="dba5303d-c94e-4958-adea-c119ee8bf4ae"
+            isDerived="false"
+            sourceEndRoleName="Formula"
+            targetEndRoleName="Clause"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7652912e-54ea-4a78-86f7-2a30aa8d2c22"
+              LastKnownName="Clause"
+              LastKnownLocation="SatisfiabilityModeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1d7ec474-8aa2-4780-b426-8b1ddcc0fe6d"
+                  name="Formula"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ab50deec-021a-4ecf-9933-f31845baa504"
+                  name="Clause"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e32a621f-26fa-43da-83ce-fa7ed63e8c28"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6a6d9540-e5ad-443b-baeb-0ab82f10ffef"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="acf8e6b8-407b-4832-9412-34040243afd9"
+            name="AddClause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a061f2cf-6701-407e-abe7-e001b494c481"
+                  name="clause"
+                  direction="In">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="0fe71eb4-b46f-40cd-915e-3668d5d6eec6"
+                      LastKnownName="IClause"
+                      LastKnownLocation="SatisfiabilityModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0816e171-6058-4ccd-9c14-0f3adafca1be"
+            name="RemoveClause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="16cabae2-7c7e-4fda-8554-07404d2e44b2"
+            name="SubstituteAsTrue"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5308a157-0f70-4fd6-a527-174807894012"
+            name="SubstituteAsFalse"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b581f63a-e808-4658-aa73-63b9d0aee35c"
+        name="IFormula"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="771f4750-d80e-400c-91d8-b754dd1a0749"
+            name="IsConsistent"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="d0d96709-996f-4687-b5a9-4414cf2abdf3"
+            name="AddClause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8c4d0857-3b89-4394-a5a4-7b9f32679044"
+                  name="clause"
+                  direction="In">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="0fe71eb4-b46f-40cd-915e-3668d5d6eec6"
+                      LastKnownName="IClause"
+                      LastKnownLocation="SatisfiabilityModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0131df73-b898-470c-bbb1-c8af34a1e7ca"
+            name="RemoveClause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="71296603-76a3-4c3b-8e0b-1515dca50830"
+            name="SubstituteAsTrue"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7981fe30-4992-4e67-bd38-87300e348208"
+            name="SubstituteAsFalse"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="0fe71eb4-b46f-40cd-915e-3668d5d6eec6"
+        name="IClause"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8f7f3047-da55-46a6-9e16-171298b6485b"
+        name="SatisfiabilitySolver"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="96d5c5f3-8072-4e57-b2f1-506db10c81f9">
+            <interfaceMoniker
+              Id="23babe35-6a12-4a4b-b05e-853fd46a05f2"
+              LastKnownName="ISatisfiabilitySolver"
+              LastKnownLocation="SatisfiabilityModeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="83a42f45-b4b9-4c53-b85a-3bb9f6115e16"
+            name="Solve"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="23babe35-6a12-4a4b-b05e-853fd46a05f2"
+        name="ISatisfiabilitySolver"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="538a0e66-fdab-48b2-a780-03716a59bd03"
+            name="Solve"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

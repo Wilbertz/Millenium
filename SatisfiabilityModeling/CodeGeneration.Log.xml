@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Program Files (x86)/Microsoft Visual Studio 10.0/Common7/IDE/Extensions/Microsoft/Visualization and Modeling Feature Pack/2.0/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log">
+  <Message Timestamp="2010-11-17T13:44:34" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Diagnostic" Text="Name = InterfaceTemplate" />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Diagnostic" Text="ProjectPath = ..\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj" />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Diagnostic" Text="TemplateFilePath = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\Visualization and Modeling Feature Pack\2.0\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2010-11-17T13:44:35" Importance="Medium" Text="SatisfiabilityModeling's Text Template Binding: 'InterfaceTemplate' will apply InterfaceTemplate.t4 to: 'SatisfiabilityModeling::IFormula' -  (Interface) " />
+  <Message Timestamp="2010-11-17T13:45:14" Importance="Medium" Text="Project Added: C:\Users\Wilbertz\Documents\Visual Studio 2010\Projects\Millenium\SatisfiabilityModelingLib\SatisfiabilityModelingLib.csproj" />
+  <Message Timestamp="2010-11-17T13:45:14" Importance="Medium" Text="'SatisfiabilityModeling::IFormula' -  (Interface) : success (file created) - C:\Users\Wilbertz\Documents\Visual Studio 2010\Projects\Millenium\SatisfiabilityModelingLib\GeneratedCode\IFormula.cs" />
+  <Message Timestamp="2010-11-17T13:45:16" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 0." />
+</Log>

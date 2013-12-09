@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71A6D6C6-42D2-443C-AD08-CC133EF54A9C}"
+	ProjectSection(SolutionItems) = preProject
+		ComplexityExperiments.vsmdi = ComplexityExperiments.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatisfiabilityTest", "SatisfiabilityTest\SatisfiabilityTest.csproj", "{DFB4E330-E90E-4194-9A28-4B5D118E0D89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satisfiability", "Satisfiability\Satisfiability.csproj", "{ADCDAA4E-C4A9-4CD6-BB89-5619C8BF0F18}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://localhost:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Satisfiability\\Satisfiability.csproj
+		SccProjectName1 = Satisfiability
+		SccLocalPath1 = Satisfiability
+		SccProjectUniqueName2 = SatisfiabilityTest\\SatisfiabilityTest.csproj
+		SccProjectName2 = SatisfiabilityTest
+		SccLocalPath2 = SatisfiabilityTest
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ComplexityExperiments.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFB4E330-E90E-4194-9A28-4B5D118E0D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB4E330-E90E-4194-9A28-4B5D118E0D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB4E330-E90E-4194-9A28-4B5D118E0D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB4E330-E90E-4194-9A28-4B5D118E0D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADCDAA4E-C4A9-4CD6-BB89-5619C8BF0F18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADCDAA4E-C4A9-4CD6-BB89-5619C8BF0F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADCDAA4E-C4A9-4CD6-BB89-5619C8BF0F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADCDAA4E-C4A9-4CD6-BB89-5619C8BF0F18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
