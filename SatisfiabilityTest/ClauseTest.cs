@@ -1,8 +1,6 @@
 ﻿namespace SatisfiabilityTest
 {
     using System;
-    using System.Collections.Generic;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Satisfiability;
 
@@ -15,24 +13,11 @@
     {
         #region Fields and Properties -----------------------------------------
 
-        private TestContext testContextInstance;
-
         /// <summary>
         /// Gets or sets the test context which provides
         /// information about and functionality for the current test run.
         /// </summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return this.testContextInstance;
-            }
-
-            set
-            {
-                this.testContextInstance = value;
-            }
-        }
+        public TestContext TestContext { get; set; }
 
         #endregion
 
@@ -48,7 +33,7 @@
         [TestMethod]
         public void Test_0001_ClauseConstructor()
         {
-            Clause target = new Clause(new int[] { 2, 3, 6 }, new int[] { 1, 4 });
+            Clause target = new Clause(new[] { 2, 3, 6 }, new [] { 1, 4 });
             Assert.IsNotNull(target, "Could not create clause instance.");
 
             Assert.IsFalse(target.IsUnsat);
@@ -61,7 +46,8 @@
         [ExpectedException(typeof(ArgumentException))]
         public void Test_0002_ClauseConstructor()
         {
-            Clause target = new Clause(new int[] { 2, 0, 6 }, new int[] { 1, 2, 4 });
+            Clause target = new Clause(new [] { 2, 0, 6 }, new [] { 1, 2, 4 });
+            Assert.IsNotNull(target);
         }
 
         /// <summary>
@@ -71,7 +57,8 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void Test_0003_ClauseConstructor()
         {
-            Clause target = new Clause(null, new int[] { 1, 2, 4 });
+            Clause target = new Clause(null, new [] { 1, 2, 4 });
+            Assert.IsNotNull(target);
         }
 
         /// <summary>
@@ -81,7 +68,8 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void Test_0004_ClauseConstructor()
         {
-            Clause target = new Clause(new int[] { 2, 0, 6 }, null);
+            Clause target = new Clause(new [] { 2, 0, 6 }, null);
+            Assert.IsNotNull(target);
         }
 
         /// <summary>
@@ -90,7 +78,7 @@
         [TestMethod]
         public void Test_0005_Clone()
         {
-            Clause source = new Clause(new int[] { 2, 3, 6 }, new int[] { 1, 4 });
+            Clause source = new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 });
             Clause clone = source.Clone() as Clause;
             Assert.IsNotNull(clone, "Could not clone instance.");
 

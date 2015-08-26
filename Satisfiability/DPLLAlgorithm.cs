@@ -1,50 +1,34 @@
 ﻿namespace Satisfiability
 {
-    using System;
     using System.Collections.Generic;
     using System.Diagnostics.Contracts;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// This class implements the Davis, Putnam, Logemann and Putland
     /// algorithm, that is used to solve an instance of the K-SAT problem.
     /// </summary>
-    public class DPLLAlgorithm
+    public class DpllAlgorithm
     {
         #region Fields and Properties -----------------------------------------
 
-        private IFormula formula = null;
+        private readonly IFormula _formula;
 
-        public IFormula Formula
-        {
-            get { return this.formula; }
-        }
+        public IFormula Formula => _formula;
 
-        private HashSet<int> assignedVariables = new HashSet<int>();
+        public HashSet<int> AssignedVariables { get; } = new HashSet<int>();
 
-        public HashSet<int> AssignedVariables
-        {
-            get { return this.assignedVariables; }
-        }
-
-        private HashSet<int> unassignedVariables = new HashSet<int>();
-
-        public HashSet<int> UnassignedVariables
-        {
-            get { return this.unassignedVariables; }
-        }
+        public HashSet<int> UnassignedVariables { get; } = new HashSet<int>();
 
         #endregion
 
         #region Constructors --------------------------------------------------
 
-        public DPLLAlgorithm(Formula formula)
+        public DpllAlgorithm(Formula formula)
         {
             Contract.Requires(formula != null);
 
-            this.formula = formula;
+            _formula = formula;
         }
 
         #endregion
@@ -53,9 +37,9 @@
 
         public IDictionary<int, bool> Solve()
         {
-            HashSet<int> unassignedVariables = this.InitializeVariables();
+            HashSet<int> initializeVariables = InitializeVariables();
 
-            return this.InternalSolve(this.formula, new Dictionary<int, bool>(), unassignedVariables); 
+            return InternalSolve(_formula, new Dictionary<int, bool>(), initializeVariables); 
         }
 
         #endregion
@@ -70,20 +54,19 @@
             Contract.Requires(assignedVariables != null);
             Contract.Requires(unassignedVariables != null);
 
-            if (unassignedVariables.Count<int>() > 0)
+            if (unassignedVariables.Any())
             {
-                Dictionary<int, bool> result = new Dictionary<int, bool>();
                 int variable = SelectUnassignedVaiable(unassignedVariables);
 
                 assignedVariables.Add(variable, false);
                 unassignedVariables.Remove(variable);
 
-                result = this.InternalSolve(formula, assignedVariables, unassignedVariables);
+                var result = InternalSolve(formula, assignedVariables, unassignedVariables);
                 return result;
             }
             else
             {
-                if (formula.Clauses.Count<IClause>() == 0)
+                if (!formula.Clauses.Any())
                 {
                     return assignedVariables;
                 }
@@ -99,24 +82,25 @@
         {
             Contract.Requires(unassignedVariables != null);
 
-            return unassignedVariables.First<int>();
+            return unassignedVariables.First();
         }
 
         [Pure]
         private HashSet<int> InitializeVariables()
         {
-            Contract.Assume(this.Formula != null);
-            Contract.Assume(this.Formula.Clauses != null);
+            Contract.Assume(Formula != null);
+            Contract.Assume(Formula.Clauses != null);
 
             HashSet<int> result = new HashSet<int>();
 
-            foreach (Clause c in this.Formula.Clauses)
+            foreach (var clause in Formula.Clauses)
             {
+                var c = (Clause) clause;
                 Contract.Assume(c != null);
                 Contract.Assume(c.Variables != null);
                 Contract.Assume(c.NegatedVariables != null);
 
-                result.UnionWith(c.Variables.Union<int>(c.NegatedVariables));
+                result.UnionWith(c.Variables.Union(c.NegatedVariables));
             }
 
             return result;

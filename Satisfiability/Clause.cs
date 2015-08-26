@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.Diagnostics.Contracts;
     using System.Linq;
-    using System.Text;
 
     /// <summary>
     /// This class is used in order to present a logical disjunction of 
@@ -14,35 +13,17 @@
     {
         #region Fields and Properties -----------------------------------------
 
-        private ISet<int> variables = null;
+        private ISet<int> _variables;
 
-        public ISet<int> Variables
-        {
-            get 
-            { 
-                return this.variables; 
-            }
-        }
+        public ISet<int> Variables => _variables;
 
-        private ISet<int> negatedVariables = null;
+        private ISet<int> _negatedVariables;
 
-        public ISet<int> NegatedVariables
-        {
-            get 
-            { 
-                return this.negatedVariables; 
-            }
-        }
+        public ISet<int> NegatedVariables => _negatedVariables;
 
-        private bool isUnsat = false;
+        private bool _isUnsat;
 
-        public bool IsUnsat
-        {
-            get 
-            { 
-                return this.isUnsat; 
-            }
-        }
+        public bool IsUnsat => _isUnsat;
 
         #endregion
 
@@ -54,10 +35,12 @@
 
         public Clause(IEnumerable<int> variables, IEnumerable<int> negatedVariables)
         {
-            CheckConstructorArguments(variables, negatedVariables);
+            var variableList = variables as IList<int> ?? variables.ToList();
+            var negatedVariableList = negatedVariables as IList<int> ?? negatedVariables.ToList();
+            CheckConstructorArguments(variableList, negatedVariableList);
 
-            this.variables = new HashSet<int>(variables);
-            this.negatedVariables = new HashSet<int>(negatedVariables);
+            _variables = new HashSet<int>(variableList);
+            _negatedVariables = new HashSet<int>(negatedVariableList);
         }
 
         #endregion
@@ -66,33 +49,33 @@
 
         public void SubstituteAsTrue(int variable)
         {
-            Contract.Requires(this.variables != null);
-            Contract.Requires(this.negatedVariables != null);
+            Contract.Requires(this._variables != null);
+            Contract.Requires(this._negatedVariables != null);
 
-            if (this.variables.Contains(variable))
+            if (_variables.Contains(variable))
             {
-                this.variables.Remove(variable);
+                _variables.Remove(variable);
             }
 
-            if (this.negatedVariables.Contains(variable))
+            if (_negatedVariables.Contains(variable))
             {
-                this.isUnsat = true;
+                _isUnsat = true;
             }
         }
 
         public void SubstituteAsFalse(int variable)
         {
-            Contract.Assume(this.variables != null);
-            Contract.Assume(this.negatedVariables != null);
+            Contract.Assume(_variables != null);
+            Contract.Assume(_negatedVariables != null);
 
-            if (this.variables.Contains(variable))
+            if (_variables.Contains(variable))
             {
-                this.isUnsat = true;
+                _isUnsat = true;
             }
 
-            if (this.negatedVariables.Contains(variable))
+            if (_negatedVariables.Contains(variable))
             {
-                this.negatedVariables.Remove(variable);
+                _negatedVariables.Remove(variable);
             }
         }
 
@@ -102,11 +85,13 @@
 
         public object Clone()
         {
-            Clause c = new Clause();
+            Clause c = new Clause
+            {
+                _variables = new HashSet<int>(_variables),
+                _negatedVariables = new HashSet<int>(_negatedVariables),
+                _isUnsat = _isUnsat
+            };
 
-            c.variables = new HashSet<int>(this.variables);
-            c.negatedVariables = new HashSet<int>(this.negatedVariables);
-            c.isUnsat = this.isUnsat;
 
             return c;
         }
@@ -115,20 +100,19 @@
 
         #region Internal Helper -----------------------------------------------
 
-        [Pure]
         private static void CheckConstructorArguments(IEnumerable<int> variables, IEnumerable<int> negatedVariables)
         {
             if (variables == null)
             {
-                throw new ArgumentNullException("variables");
+                throw new ArgumentNullException(nameof(variables));
             }
 
             if (negatedVariables == null)
             {
-                throw new ArgumentNullException("negatedVariables");
+                throw new ArgumentNullException(nameof(negatedVariables));
             }
 
-            if (variables.Intersect<int>(negatedVariables).Count<int>() > 0)
+            if (variables.Intersect(negatedVariables).Any())
             {
                 throw new ArgumentException("Variables and negated Variables cannot contain a common element");
             }    

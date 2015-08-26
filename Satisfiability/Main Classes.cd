@@ -11,15 +11,15 @@
   <Class Name="Satisfiability.Formula">
     <Position X="5.25" Y="1" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAACSAAAAAAAAAAAAAAAAACAAFA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAACSAAAAAAAAAAAAAQAAACAAFA=</HashCode>
       <FileName>Formula.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Satisfiability.DPLLAlgorithm">
+  <Class Name="Satisfiability.DpllAlgorithm">
     <Position X="9.75" Y="1" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAEAAAAACAAAAAAAAAIAAAAAAAgAAAAAAIAAIA=</HashCode>
+      <HashCode>AAACAAAEAAAAAAAAAAAAAAAIAAgABAAwAAAAAAAAAIA=</HashCode>
       <FileName>DPLLAlgorithm.cs</FileName>
     </TypeIdentifier>
   </Class>

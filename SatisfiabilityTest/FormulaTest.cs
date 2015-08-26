@@ -1,6 +1,5 @@
 ﻿namespace SatisfiabilityTest
 {
-    using System;
     using System.Collections.Generic;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,24 +13,11 @@
     [TestClass]
     public class FormulaTest
     {
-        private TestContext testContextInstance;
-
         /// <summary>
         /// Gets or sets the test context which provides
         /// information about and functionality for the current test run.
         /// </summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return this.testContextInstance;
-            }
-
-            set
-            {
-                this.testContextInstance = value;
-            }
-        }
+        public TestContext TestContext { get; set; }
 
         #region Additional test attributes ------------------------------------
         
@@ -43,10 +29,10 @@
         [TestMethod]
         public void Test_0001_FormulaConstructor()
         {
-            IEnumerable<IClause> clauses = new Clause[] 
+            IEnumerable<IClause> clauses = new [] 
             { 
-                new Clause(new int[] { 2, 3, 6 }, new int[] { 1, 4 }),
-                new Clause(new int[] { 1, 5, 6 }, new int[] { 2, 3, 7 })
+                new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
+                new Clause(new [] { 1, 5, 6 }, new [] { 2, 3, 7 })
             };
             Formula target = new Formula(clauses);
             Assert.IsNotNull(target);
@@ -72,10 +58,10 @@
         [TestMethod]
         public void Test_0002_SubstituteAsFalse()
         {
-            IEnumerable<IClause> clauses = new Clause[] 
+            IEnumerable<IClause> clauses = new [] 
             { 
-                new Clause(new int[] { 2, 3, 6 }, new int[] { 1, 4 }),
-                new Clause(new int[] { 1, 5, 6 }, new int[] { 2, 3, 7 }) 
+                new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
+                new Clause(new [] { 1, 5, 6 }, new [] { 2, 3, 7 }) 
             };
 
             Formula target = new Formula(clauses); 
@@ -89,10 +75,10 @@
         [TestMethod]
         public void Test_0003_SubstituteAsTrue()
         {
-            IEnumerable<IClause> clauses = new Clause[] 
+            IEnumerable<IClause> clauses = new [] 
             { 
-                new Clause(new int[] { 2, 3, 6 }, new int[] { 1, 4 }),
-                new Clause(new int[] { 1, 5, 6 }, new int[] { 2, 3, 7 }) 
+                new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
+                new Clause(new [] { 1, 5, 6 }, new [] { 2, 3, 7 }) 
             };
 
             Formula target = new Formula(clauses);
@@ -107,10 +93,10 @@
         [TestMethod]
         public void Test_0004_Clone()
         {
-            IEnumerable<IClause> clauses = new Clause[] 
+            IEnumerable<IClause> clauses = new [] 
             { 
-                new Clause(new int[] { 2, 3, 6 }, new int[] { 1, 4 }),
-                new Clause(new int[] { 1, 5, 6 }, new int[] { 2, 3, 7 }) 
+                new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
+                new Clause(new [] { 1, 5, 6 }, new [] { 2, 3, 7 }) 
             };
 
             Formula target = new Formula(clauses);

@@ -4,8 +4,6 @@
     using System.Collections.Generic;
     using System.Diagnostics.Contracts;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// This class represents a boolean expression in conjunctive normal form.
@@ -14,23 +12,17 @@
     {
         #region Fields and Properties -----------------------------------------
 
-        private List<IClause> clauses = null;
+        private List<IClause> _clauses;
 
-        public IEnumerable<IClause> Clauses
-        {
-            get 
-            { 
-                return this.clauses; 
-            }
-        }
+        public IEnumerable<IClause> Clauses => _clauses;
 
         public bool IsUnsat
         {
             get 
             {
-                if (this.Clauses != null)
+                if (Clauses != null)
                 {
-                    return this.Clauses.Any((c) => c.IsUnsat);
+                    return Clauses.Any(c => c.IsUnsat);
                 }
                 else
                 {
@@ -45,8 +37,9 @@
             {
                 IEnumerable<int> variables = new HashSet<int>();
 
-                foreach (Clause c in this.Clauses)
+                foreach (var clause in Clauses)
                 {
+                    var c = (Clause) clause;
                     variables = variables.Union(c.Variables);
                     variables = variables.Union(c.NegatedVariables);
                 }
@@ -67,7 +60,7 @@
         {
             Contract.Requires(clauses != null);
 
-            this.clauses = new List<IClause>(clauses);
+            _clauses = new List<IClause>(clauses);
         }
 
         #endregion
@@ -76,9 +69,10 @@
 
         public void SubstituteAsTrue(int variable)
         {
-            Contract.Assume(this.Clauses != null);
-            foreach (Clause c in this.Clauses)
+            Contract.Assume(Clauses != null);
+            foreach (var clause in Clauses)
             {
+                var c = (Clause) clause;
                 Contract.Assume(c != null);
                 c.SubstituteAsTrue(variable);
             }
@@ -86,9 +80,10 @@
 
         public void SubstituteAsFalse(int variable)
         {
-            Contract.Assume(this.Clauses != null);
-            foreach (Clause c in this.Clauses)
+            Contract.Assume(Clauses != null);
+            foreach (var clause in Clauses)
             {
+                var c = (Clause) clause;
                 Contract.Assume(c != null);
                 c.SubstituteAsFalse(variable);
             }
@@ -100,9 +95,7 @@
 
         public object Clone()
         {
-            Formula f = new Formula();
-
-            f.clauses = new List<IClause>(this.Clauses);
+            Formula f = new Formula {_clauses = new List<IClause>(Clauses)};
 
             return f;
         }
