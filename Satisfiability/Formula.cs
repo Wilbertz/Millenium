@@ -95,9 +95,7 @@
 
         public object Clone()
         {
-            Formula f = new Formula {_clauses = new List<IClause>(Clauses)};
-
-            return f;
+            return new Formula {_clauses = new List<IClause>(Clauses)};
         }
 
         #endregion

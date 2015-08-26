@@ -78,7 +78,7 @@
         }
 
         [Pure]
-        private static int SelectUnassignedVaiable(HashSet<int> unassignedVariables)
+        private int SelectUnassignedVaiable(HashSet<int> unassignedVariables)
         {
             Contract.Requires(unassignedVariables != null);
 
