@@ -7,6 +7,7 @@
 
     /// <summary>
     /// This class represents a boolean expression in conjunctive normal form.
+    /// It is used by the DpllAlgorithm class.
     /// </summary>
     public class Formula : IFormula, ICloneable
     {

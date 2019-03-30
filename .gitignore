@@ -154,3 +154,7 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+/.vs/ComplexityExperiments/v15/Server/sqlite3/db.lock
+/.vs/ComplexityExperiments/v15/Server/sqlite3/storage.ide
+/.vs/ComplexityExperiments/v15/Server/sqlite3/storage.ide-shm
+/.vs/ComplexityExperiments/v15/Server/sqlite3/storage.ide-wal
