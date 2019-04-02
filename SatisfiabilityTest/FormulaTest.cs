@@ -29,12 +29,17 @@
         [TestMethod]
         public void Test_0001_FormulaConstructor()
         {
+            // Arrange
             IEnumerable<IClause> clauses = new [] 
             { 
                 new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
                 new Clause(new [] { 1, 5, 6 }, new [] { 2, 3, 7 })
             };
+
+            // Act
             Formula target = new Formula(clauses);
+
+            // Assert
             Assert.IsNotNull(target);
 
             HashSet<int> variables = new HashSet<int>(target.Variables);
@@ -58,6 +63,7 @@
         [TestMethod]
         public void Test_0002_SubstituteAsFalse()
         {
+            // Arrange
             IEnumerable<IClause> clauses = new [] 
             { 
                 new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
@@ -66,7 +72,12 @@
 
             Formula target = new Formula(clauses); 
             int variable = 1; 
+
+            // Act
             target.SubstituteAsFalse(variable);
+
+            // Asserts
+            // ToDo: 
         }
 
         /// <summary>
@@ -75,6 +86,7 @@
         [TestMethod]
         public void Test_0003_SubstituteAsTrue()
         {
+            // Arrange
             IEnumerable<IClause> clauses = new [] 
             { 
                 new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
@@ -84,7 +96,12 @@
             Formula target = new Formula(clauses);
 
             int variable = 1; 
+
+            // Act
             target.SubstituteAsTrue(variable);
+
+            // Asserts
+            // ToDo: 
         }
 
         /// <summary>
@@ -93,6 +110,7 @@
         [TestMethod]
         public void Test_0004_Clone()
         {
+            // Arrange
             IEnumerable<IClause> clauses = new [] 
             { 
                 new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 }),
@@ -101,7 +119,10 @@
 
             Formula target = new Formula(clauses);
 
+            // Act
             Formula clone = target.Clone() as Formula;
+
+            // Assert
             Assert.IsNotNull(clone);
         }
     }

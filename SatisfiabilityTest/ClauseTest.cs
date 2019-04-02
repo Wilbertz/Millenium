@@ -33,9 +33,11 @@
         [TestMethod]
         public void Test_0001_ClauseConstructor()
         {
+            // Arrange and Act
             Clause target = new Clause(new[] { 2, 3, 6 }, new [] { 1, 4 });
-            Assert.IsNotNull(target, "Could not create clause instance.");
 
+            // Assert
+            Assert.IsNotNull(target, "Could not create clause instance.");
             Assert.IsFalse(target.IsUnsat);
         }
 
@@ -46,7 +48,10 @@
         [ExpectedException(typeof(ArgumentException))]
         public void Test_0002_ClauseConstructor()
         {
+            // Arrange and Act
             Clause target = new Clause(new [] { 2, 0, 6 }, new [] { 1, 2, 4 });
+
+            // Assert
             Assert.IsNotNull(target);
         }
 
@@ -57,7 +62,10 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void Test_0003_ClauseConstructor()
         {
+            // Arrange and Act
             Clause target = new Clause(null, new [] { 1, 2, 4 });
+
+            // Assert
             Assert.IsNotNull(target);
         }
 
@@ -68,7 +76,10 @@
         [ExpectedException(typeof(ArgumentNullException))]
         public void Test_0004_ClauseConstructor()
         {
+            // Arrange and Act
             Clause target = new Clause(new [] { 2, 0, 6 }, null);
+
+            // Assert
             Assert.IsNotNull(target);
         }
 
@@ -78,8 +89,13 @@
         [TestMethod]
         public void Test_0005_Clone()
         {
+            // Arrange
             Clause source = new Clause(new [] { 2, 3, 6 }, new [] { 1, 4 });
+
+            // Act
             Clause clone = source.Clone() as Clause;
+
+            // Assert
             Assert.IsNotNull(clone, "Could not clone instance.");
 
             clone.SubstituteAsTrue(1);
