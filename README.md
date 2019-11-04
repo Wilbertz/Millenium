@@ -8,3 +8,8 @@
 4. [Results](#results)
 5. [Licensing, Authors, and Acknowledgements](#licensing)
 
+## Directory Structure <a name="directoryStructure"></a>
+
+- Root /
+    - README.md (This readme file)
+    
