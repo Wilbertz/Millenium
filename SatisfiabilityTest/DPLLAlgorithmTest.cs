@@ -31,7 +31,7 @@
             Assert.IsNotNull(algorithm);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void Test_0002_DPLLAlgorithmSolve()
         {
             // Arrange
