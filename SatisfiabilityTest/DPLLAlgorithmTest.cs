@@ -51,7 +51,6 @@
 
             // Act
             Assert.IsNotNull(solution);
-
             // ToDo: Additional Asserts
         }
     }
