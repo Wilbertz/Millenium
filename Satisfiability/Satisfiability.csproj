@@ -111,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Main Classes.cd" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Satisfiability.snk" />
   </ItemGroup>
