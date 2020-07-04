@@ -107,6 +107,9 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IClause.cs" />
     <Compile Include="IFormula.cs" />
+    <Compile Include="Common\LoggingAspect.cs" />
+    <Compile Include="Common\LoggingAttribute.cs" />
+    <Compile Include="Common\LoggingProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +123,7 @@
     <None Include="packages.config" />
     <None Include="Satisfiability.snk" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
