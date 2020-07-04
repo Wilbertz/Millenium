@@ -5,17 +5,18 @@
     using System.Diagnostics.Contracts;
     using System.Linq;
 
+    using Satisfiability.Common;
+
     /// <summary>
     /// This class represents a boolean expression in conjunctive normal form.
     /// It is used by the DPLL Algorithm class.
     /// </summary>
-    public class Formula : IFormula, ICloneable
+    [Logging]
+    public class Formula : ContextBoundObject, IFormula, ICloneable
     {
         #region Fields and Properties -----------------------------------------
 
-        private List<IClause> _clauses;
-
-        public IEnumerable<IClause> Clauses => _clauses;
+        public IEnumerable<IClause> Clauses { get; set; }
 
         public bool IsUnsat
         {
@@ -61,7 +62,7 @@
         {
             Contract.Requires(clauses != null);
 
-            _clauses = new List<IClause>(clauses);
+            Clauses = new List<IClause>(clauses);
         }
 
         #endregion
@@ -96,7 +97,7 @@
 
         public object Clone()
         {
-            return new Formula {_clauses = new List<IClause>(Clauses)};
+            return new Formula {Clauses = new List<IClause>(Clauses)};
         }
 
         #endregion
