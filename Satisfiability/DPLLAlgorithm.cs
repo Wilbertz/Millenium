@@ -1,14 +1,18 @@
-﻿namespace Satisfiability
+﻿using System;
+
+namespace Satisfiability
 {
     using System.Collections.Generic;
     using System.Diagnostics.Contracts;
     using System.Linq;
 
+    using Satisfiability.Common;
     /// <summary>
     /// This class implements the Davis, Putnam, Logemann and Putland
     /// algorithm, that is used to solve an instance of the K-SAT problem.
     /// </summary>
-    public class DpllAlgorithm
+    [Logging]
+    public class DpllAlgorithm : ContextBoundObject
     {
         #region Fields and Properties -----------------------------------------
 

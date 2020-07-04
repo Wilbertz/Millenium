@@ -5,25 +5,21 @@
     using System.Diagnostics.Contracts;
     using System.Linq;
 
+    using Satisfiability.Common;
     /// <summary>
     /// This class is used in order to present a logical disjunction of 
     /// several possibly negated variables.
     /// </summary>
-    public class Clause : IClause, ICloneable
+    [Logging]
+    public class Clause : ContextBoundObject, IClause, ICloneable
     {
         #region Fields and Properties -----------------------------------------
 
-        private ISet<int> _variables;
+        public ISet<int> Variables { get; set; }
 
-        public ISet<int> Variables => _variables;
+        public ISet<int> NegatedVariables { get; set; }
 
-        private ISet<int> _negatedVariables;
-
-        public ISet<int> NegatedVariables => _negatedVariables;
-
-        private bool _isUnsat;
-
-        public bool IsUnsat => _isUnsat;
+        public bool IsUnsat { get; set; }
 
         #endregion
 
@@ -39,8 +35,8 @@
             var negatedVariableList = negatedVariables as IList<int> ?? negatedVariables.ToList();
             CheckConstructorArguments(variableList, negatedVariableList);
 
-            _variables = new HashSet<int>(variableList);
-            _negatedVariables = new HashSet<int>(negatedVariableList);
+            Variables = new HashSet<int>(variableList);
+            NegatedVariables = new HashSet<int>(negatedVariableList);
         }
 
         #endregion
@@ -49,33 +45,33 @@
 
         public void SubstituteAsTrue(int variable)
         {
-            Contract.Requires(this._variables != null);
-            Contract.Requires(this._negatedVariables != null);
+            Contract.Requires(this.Variables != null);
+            Contract.Requires(this.NegatedVariables != null);
 
-            if (_variables.Contains(variable))
+            if (Variables.Contains(variable))
             {
-                _variables.Remove(variable);
+                Variables.Remove(variable);
             }
 
-            if (_negatedVariables.Contains(variable))
+            if (NegatedVariables.Contains(variable))
             {
-                _isUnsat = true;
+                IsUnsat = true;
             }
         }
 
         public void SubstituteAsFalse(int variable)
         {
-            Contract.Assume(_variables != null);
-            Contract.Assume(_negatedVariables != null);
+            Contract.Assume(Variables != null);
+            Contract.Assume(NegatedVariables != null);
 
-            if (_variables.Contains(variable))
+            if (Variables.Contains(variable))
             {
-                _isUnsat = true;
+                IsUnsat = true;
             }
 
-            if (_negatedVariables.Contains(variable))
+            if (NegatedVariables.Contains(variable))
             {
-                _negatedVariables.Remove(variable);
+                NegatedVariables.Remove(variable);
             }
         }
 
@@ -83,16 +79,14 @@
 
         #region ICloneable Members --------------------------------------------
 
-        public object Clone()
+        public Object Clone()
         {
-            Clause c = new Clause
+            Clause c = new Clause()
             {
-                _variables = new HashSet<int>(_variables),
-                _negatedVariables = new HashSet<int>(_negatedVariables),
-                _isUnsat = _isUnsat
+                Variables = new HashSet<int>(Variables),
+                NegatedVariables = new HashSet<int>(NegatedVariables),
+                IsUnsat = IsUnsat
             };
-
-
             return c;
         }
 
