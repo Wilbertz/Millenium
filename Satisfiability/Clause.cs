@@ -1,10 +1,11 @@
-﻿namespace Satisfiability
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
-    using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
+using NLog;
 
+namespace Satisfiability
+{
     using Satisfiability.Common;
     /// <summary>
     /// This class is used in order to present a logical disjunction of 
@@ -20,6 +21,8 @@
         public ISet<int> NegatedVariables { get; set; }
 
         public bool IsUnsat { get; set; }
+
+        Logger _logger = LogManager.GetCurrentClassLogger();
 
         #endregion
 

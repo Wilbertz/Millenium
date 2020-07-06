@@ -1,4 +1,5 @@
 ﻿using System;
+using NLog;
 
 namespace Satisfiability
 {
@@ -23,6 +24,8 @@ namespace Satisfiability
         public HashSet<int> AssignedVariables { get; } = new HashSet<int>();
 
         public HashSet<int> UnassignedVariables { get; } = new HashSet<int>();
+
+        Logger _logger = LogManager.GetCurrentClassLogger();
 
         #endregion
 

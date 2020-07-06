@@ -1,4 +1,6 @@
-﻿namespace Satisfiability
+﻿using NLog;
+
+namespace Satisfiability
 {
     using System;
     using System.Collections.Generic;
@@ -49,6 +51,8 @@
                 return variables;
             }
         }
+
+        Logger _logger = LogManager.GetCurrentClassLogger();
 
         #endregion
 
