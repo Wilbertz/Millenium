@@ -1,7 +1,9 @@
-﻿namespace SatisfiabilityTest
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NLog;
+
+namespace SatisfiabilityTest
 {
-    using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Satisfiability;
 
     /// <summary>
@@ -19,10 +21,12 @@
         /// </summary>
         public TestContext TestContext { get; set; }
 
+        Logger _logger = LogManager.GetCurrentClassLogger();
+
         #endregion
 
         #region Additional test attributes ------------------------------------
-        
+
         #endregion
 
         #region Tests ---------------------------------------------------------

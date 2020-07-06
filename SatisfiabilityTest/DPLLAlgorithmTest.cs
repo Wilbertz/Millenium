@@ -1,8 +1,9 @@
-﻿namespace SatisfiabilityTest
-{
-    using System.Collections.Generic;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NLog;
 
+namespace SatisfiabilityTest
+{
     using Satisfiability;
 
     /// <summary>
@@ -11,6 +12,8 @@
     [TestClass]
     public class DpllAlgorithmTest
     {
+        Logger _logger = LogManager.GetCurrentClassLogger();
+
         [TestMethod]
         public void Test_0001_DPLLAlgorithmConstructor()
         {
