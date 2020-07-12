@@ -52,7 +52,7 @@ namespace Satisfiability
             }
         }
 
-        Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         #endregion
 

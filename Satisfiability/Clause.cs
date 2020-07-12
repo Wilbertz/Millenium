@@ -22,7 +22,7 @@ namespace Satisfiability
 
         public bool IsUnsat { get; set; }
 
-        Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         #endregion
 

@@ -25,7 +25,7 @@ namespace Satisfiability
 
         public HashSet<int> UnassignedVariables { get; } = new HashSet<int>();
 
-        Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         #endregion
 
