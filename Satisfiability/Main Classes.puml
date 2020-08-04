@@ -1,5 +1,5 @@
 ﻿@startuml
-'' plantumlfile1
+'' Main Classes
 scale 3
 Bob -> Alice : Hello
 
