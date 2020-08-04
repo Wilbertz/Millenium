@@ -121,6 +121,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Main Classes.puml" />
     <None Include="Satisfiability.snk" />
   </ItemGroup>
   <ItemGroup />
