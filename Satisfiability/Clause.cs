@@ -84,13 +84,13 @@ namespace Satisfiability
 
         public Object Clone()
         {
-            Clause c = new Clause()
+            Clause clause = new Clause()
             {
                 Variables = new HashSet<int>(Variables),
                 NegatedVariables = new HashSet<int>(NegatedVariables),
                 IsUnsat = IsUnsat
             };
-            return c;
+            return clause;
         }
 
         #endregion
