@@ -82,9 +82,9 @@ namespace Satisfiability
 
         #region ICloneable Members --------------------------------------------
 
-        public Object Clone()
+        public object Clone()
         {
-            Clause clause = new Clause()
+            var clause = new Clause()
             {
                 Variables = new HashSet<int>(Variables),
                 NegatedVariables = new HashSet<int>(NegatedVariables),
