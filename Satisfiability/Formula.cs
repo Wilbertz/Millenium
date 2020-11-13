@@ -7,7 +7,7 @@ namespace Satisfiability
     using System.Diagnostics.Contracts;
     using System.Linq;
 
-    using Satisfiability.Common;
+    using Common;
 
     /// <summary>
     /// This class represents a boolean expression in conjunctive normal form.
