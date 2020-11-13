@@ -91,18 +91,21 @@ namespace Satisfiability.Common
 
             IMethodMessage call = msg as IMethodMessage;
             Type type = Type.GetType(call.TypeName);
-            string callStr = type.Name + "." + call.MethodName;
-
-            _logger.Debug($"Entry: {callStr}");
-
-            for (int i = 0; i < call.ArgCount; i++)
+            if (!(type is null))
             {
-                _logger.Trace($"{callStr}, Argument: {call.GetArgName(i)}, Value: {call.GetArg(i)}");
+                string callStr = type.Name + "." + call.MethodName;
+
+                _logger.Debug($"Entry: {callStr}");
+
+                for (int i = 0; i < call.ArgCount; i++)
+                {
+                    _logger.Trace($"{callStr}, Argument: {call.GetArgName(i)}, Value: {call.GetArg(i)}");
+                }
             }
         }
 
         /// <summary>
-        /// This mehtod is called after any method call.
+        /// This method is called after any method call.
         /// </summary>
         /// <param name="msg"></param>
         private void Postprocess(IMessage msg)
