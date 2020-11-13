@@ -7,7 +7,7 @@ namespace Satisfiability
     using System.Diagnostics.Contracts;
     using System.Linq;
 
-    using Satisfiability.Common;
+    using Common;
     /// <summary>
     /// This class implements the Davis, Putnam, Logemann and Putland
     /// algorithm, that is used to solve an instance of the K-SAT problem.
@@ -25,7 +25,7 @@ namespace Satisfiability
 
         public HashSet<int> UnassignedVariables { get; } = new HashSet<int>();
 
-        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger;
 
         #endregion
 
@@ -35,6 +35,7 @@ namespace Satisfiability
         {
             Contract.Requires(formula != null);
 
+            _logger = LogManager.GetCurrentClassLogger();
             _formula = formula;
         }
 
