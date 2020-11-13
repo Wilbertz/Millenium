@@ -16,7 +16,7 @@ namespace Satisfiability.Common
 
         private readonly IMessageSink m_next;
 
-        private readonly static Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger;
 
         #endregion
 
@@ -29,6 +29,8 @@ namespace Satisfiability.Common
         /// <param name="next"></param>
         internal LoggingAspect(IMessageSink next)
         {
+            _logger = LogManager.GetCurrentClassLogger();
+
             m_next = next;
         }
 
@@ -110,7 +112,7 @@ namespace Satisfiability.Common
                 return;
             }
 
-            IMethodReturnMessage call = msg as IMethodReturnMessage;
+            IMethodReturnMessage call = (IMethodReturnMessage) msg;
             Type type = Type.GetType(call.TypeName);
             if (!(type is null))
             {
