@@ -14,7 +14,7 @@ namespace Satisfiability.Common
     {
         #region Fields and Properties -----------------------------------------
 
-        private IMessageSink m_next;
+        private readonly IMessageSink m_next;
 
         private readonly static Logger _logger = LogManager.GetCurrentClassLogger();
 
@@ -39,13 +39,7 @@ namespace Satisfiability.Common
         /// <summary>
         /// Get the next sink within the chain of message sinks.
         /// </summary>
-        public IMessageSink NextSink
-        {
-            get
-            {
-                return m_next;
-            }
-        }
+        public IMessageSink NextSink => m_next;
 
         /// <summary>
         /// The processing of synchronous messages is intercepted. Dedicated code 
@@ -118,27 +112,30 @@ namespace Satisfiability.Common
 
             IMethodReturnMessage call = msg as IMethodReturnMessage;
             Type type = Type.GetType(call.TypeName);
-            string callStr = type.Name + "." + call.MethodName;
-
-            _logger.Debug($"Exit : {callStr}, ReturnValue: {call.ReturnValue}");
-
-            var task = call.ReturnValue as Task;
-            Exception ex = call.Exception;
-            if (ex == null)
+            if (!(type is null))
             {
-                // In case there is an asynchronous call, we have to check the task.
-                if (task?.Exception?.InnerException != null)
+                string callStr = type.Name + "." + call.MethodName;
+
+                _logger.Debug($"Exit : {callStr}, ReturnValue: {call.ReturnValue}");
+
+                var task = call.ReturnValue as Task;
+                Exception ex = call.Exception;
+                if (ex == null)
                 {
-                    ex = task?.Exception?.InnerException;
+                    // In case there is an asynchronous call, we have to check the task.
+                    if (task?.Exception?.InnerException != null)
+                    {
+                        ex = task?.Exception?.InnerException;
+                    }
+                    else
+                    {
+                        ex = task?.Exception;
+                    }
                 }
-                else
+                if (ex != null)
                 {
-                    ex = task?.Exception;
+                    _logger.Error($"{callStr}, Exception: {ex}");
                 }
-            }
-            if (ex != null)
-            {
-                _logger.Error($"{callStr}, Exception: {ex}");
             }
         }
 
