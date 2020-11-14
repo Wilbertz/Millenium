@@ -22,17 +22,7 @@ namespace Satisfiability
 
         public bool IsUnsat
         {
-            get 
-            {
-                if (Clauses != null)
-                {
-                    return Clauses.Any(c => c.IsUnsat);
-                }
-                else
-                {
-                    return false;
-                }
-            }
+            get { return Clauses != null && Clauses.Any(c => c.IsUnsat); }
         }
 
         public IEnumerable<int> Variables
