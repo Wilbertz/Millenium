@@ -6,7 +6,7 @@ using NLog;
 
 namespace Satisfiability
 {
-    using Satisfiability.Common;
+    using Common;
     /// <summary>
     /// This class is used in order to present a logical disjunction of 
     /// several possibly negated variables.
