@@ -7,6 +7,7 @@ class Clause
 {
 	+ {field} bool IsUnsat
 	+ {method} SubstituteAsTrue
+	+ {method} SubstituteAsFalse
 }
 solution - solver
 
