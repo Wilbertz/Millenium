@@ -1,12 +1,13 @@
 ﻿@startuml
-'' plantumlfile1
+'' Main classes.
 scale 3
-class dpll_algorithm
-class solution
-class solver
-class helper
+class DPLLAlgorithm
 class Formula
 class Clause
+{
+	+ {field} bool IsUnsat
+	+ {method} SubstituteAsTrue
+}
 solution - solver
 
 @enduml
