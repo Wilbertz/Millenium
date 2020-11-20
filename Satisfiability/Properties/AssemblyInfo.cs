@@ -37,4 +37,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 // Assembly exposed externally visible types
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]
