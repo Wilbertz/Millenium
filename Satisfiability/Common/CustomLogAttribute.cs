@@ -1,4 +1,6 @@
-﻿using MethodBoundaryAspect.Fody.Attributes;
+﻿using System.Threading.Tasks;
+
+using MethodBoundaryAspect.Fody.Attributes;
 using NLog.Fluent;
 
 namespace Satisfiability.Common
@@ -16,7 +18,10 @@ namespace Satisfiability.Common
 
         public override void OnExit(MethodExecutionArgs args)
         {
-            Log.Info($"Exit: [{args.ReturnValue}]");
+            if (args.ReturnValue is Task t)
+            {
+                t.ContinueWith(task => Log.Info($"Exit: [{args.ReturnValue}]"));
+            }
         }
 
         public override void OnException(MethodExecutionArgs args)
