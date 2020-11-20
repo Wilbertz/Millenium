@@ -14,7 +14,7 @@ namespace Satisfiability
     /// It is used by the DPLL Algorithm class.
     /// </summary>
     [Logging]
-    public class Formula : ContextBoundObject, IFormula, ICloneable
+    public class Formula : IFormula, ICloneable
     {
         #region Fields and Properties -----------------------------------------
 

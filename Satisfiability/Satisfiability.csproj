@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clause.cs" />
-    <Compile Include="Common\CustomLogAttribute.cs" />
+    <Compile Include="Common\LoggingAttribute.cs" />
     <Compile Include="DPLLAlgorithm.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -126,7 +126,7 @@
     <None Include="Main Classes.cd" />
     <Content Include="FodyWeavers.xml" />
     <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>

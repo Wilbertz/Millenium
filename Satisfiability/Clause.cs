@@ -12,7 +12,7 @@ namespace Satisfiability
     /// several possibly negated variables.
     /// </summary>
     [Logging]
-    public class Clause : ContextBoundObject, IClause, ICloneable
+    public class Clause : IClause, ICloneable
     {
         #region Fields and Properties -----------------------------------------
 

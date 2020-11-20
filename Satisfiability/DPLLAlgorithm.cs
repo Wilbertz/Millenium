@@ -13,7 +13,7 @@ namespace Satisfiability
     /// algorithm, that is used to solve an instance of the K-SAT problem.
     /// </summary>
     [Logging]
-    public class DpllAlgorithm : ContextBoundObject
+    public class DpllAlgorithm
     {
         #region Fields and Properties -----------------------------------------
 
@@ -36,6 +36,7 @@ namespace Satisfiability
             Contract.Requires(formula != null);
 
             _logger = LogManager.GetCurrentClassLogger();
+            _logger.Info("Hallo");
             _formula = formula;
         }
 

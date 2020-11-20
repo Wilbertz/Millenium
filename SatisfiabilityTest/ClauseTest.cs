@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NLog;
+using NLog.Targets;
 
 namespace SatisfiabilityTest
 {
