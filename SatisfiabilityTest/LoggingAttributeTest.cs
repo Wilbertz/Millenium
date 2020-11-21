@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NLog;
@@ -27,7 +21,7 @@ namespace SatisfiabilityTest
         /// </summary>
         public TestContext TestContext { get; set; }
 
-        Logger _logger = LogManager.GetCurrentClassLogger();
+        public Logger Logger { get; } = LogManager.GetCurrentClassLogger();
 
         #endregion
 
@@ -48,12 +42,13 @@ namespace SatisfiabilityTest
         }
 
         [TestMethod]
-        public void Test_0002_LoggingAttributeConstructor()
+        public void Test_0002_LoggingAttributeMethodsAreCalled()
         {
             // Arrange 
             var mockedLogger = new Mock<ILogger>();
-            //mockedLogger.Setup(m => m.Info(It.IsAny<string>())).
-            var classUnderTest = CreateClassUnderTestWithInjectedLogger(mockedLogger.Object);
+            var classUnderTest = new ClassUnderTest();
+
+            SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
 
             // Act
             classUnderTest.MethodToBeTested();
@@ -74,27 +69,11 @@ namespace SatisfiabilityTest
             }
         }
 
-        private ClassUnderTest CreateClassUnderTestWithInjectedLogger(ILogger logger)
+        private void SetLoggingInterfaceInAttributeOfClassUnderTest(ILogger logger)
         {
-            var classUnderTest = new ClassUnderTest();
-
-            SetLoggingInterfaceInAttributeOfClassUnderTest(classUnderTest, logger);
-
-            return classUnderTest;
-        }
-
-        private void SetLoggingInterfaceInAttributeOfClassUnderTest(object classUnderTest, ILogger logger)
-        {
-            var attribute = classUnderTest
-                .GetType()
-                .GetCustomAttributes<LoggingAttribute>()
-                .FirstOrDefault();
-
-            if (attribute != null)
-            {
-                var loggerField = typeof(LoggingAttribute).GetField("_logger", BindingFlags.Instance | BindingFlags.NonPublic);
-                loggerField?.SetValue(attribute, logger);
-            }
+            typeof(LoggingAttribute)
+                .GetField("Logger", BindingFlags.Static | BindingFlags.NonPublic)
+                ?.SetValue(null, logger);
         }
 
         #endregion
