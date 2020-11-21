@@ -7,7 +7,7 @@ namespace Satisfiability.Common
 {
     public sealed class LoggingAttribute : OnMethodBoundaryAspect
     {
-        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 
         public override void OnEntry(MethodExecutionArgs args)
         {
