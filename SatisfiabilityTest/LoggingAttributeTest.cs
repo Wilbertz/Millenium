@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NLog;
+using Satisfiability.Common;
 
 namespace SatisfiabilityTest
 {
@@ -27,5 +28,21 @@ namespace SatisfiabilityTest
         Logger _logger = LogManager.GetCurrentClassLogger();
 
         #endregion
+
+        /// <summary>
+        /// A test for Formula Constructor
+        /// </summary>
+        [TestMethod]
+        public void Test_0001_LoggingAttributeConstructor()
+        {
+            // Arrange
+
+            // Act
+            var result = new LoggingAttribute();
+
+            // Assert
+            Assert.IsNotNull(result);
+
+        }
     }
 }
