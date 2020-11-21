@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="ClauseTest.cs" />
     <Compile Include="FormulaTest.cs" />
+    <Compile Include="LoggingAttributeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DPLLAlgorithmTest.cs" />
   </ItemGroup>
