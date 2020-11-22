@@ -59,7 +59,9 @@ namespace SatisfiabilityTest
             mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
             mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
             mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
-            mockedLogger.Verify(m => m.Info(It.IsAny<string>()), Times.Exactly(2));
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s => 
+                s.Equals("Init: SatisfiabilityTest.LoggingAttributeTest+ClassUnderTest.MethodToBeTested [0] params"))), Times.Exactly(1));
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: []"))), Times.Exactly(1));
             mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
             mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }

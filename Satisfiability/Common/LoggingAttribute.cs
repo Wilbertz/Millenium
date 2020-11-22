@@ -12,7 +12,10 @@ namespace Satisfiability.Common
         public override void OnEntry(MethodExecutionArgs args)
         {
             if (!(args.Method.DeclaringType is null))
-                Logger.Info($"Init: {args.Method.DeclaringType.FullName}.{args.Method.Name} [{args.Arguments.Length}] params");
+            {
+                Logger.Info(
+                    $"Init: {args.Method.DeclaringType.FullName}.{args.Method.Name} [{args.Arguments.Length}] params");
+            }
             foreach (var item in args.Method.GetParameters())
             {
                 Logger.Debug($"{item.Name}: {args.Arguments[item.Position]}");
