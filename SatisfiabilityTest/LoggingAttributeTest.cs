@@ -44,7 +44,7 @@ namespace SatisfiabilityTest
         }
 
         [TestMethod]
-        public void Test_0002_LoggingAttributeMethodsAreCalled()
+        public void Test_0002_MethodCallIsLogged()
         {
             // Arrange 
             var mockedLogger = new Mock<ILogger>();
@@ -66,6 +66,28 @@ namespace SatisfiabilityTest
             mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
 
+        [TestMethod]
+        public void Test_0003_MethodArgumentsAreLogged()
+        {
+            // Arrange 
+            var mockedLogger = new Mock<ILogger>();
+            var classUnderTest = new ClassUnderTest();
+
+            SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
+
+            // Act
+            classUnderTest.MethodWith2ArgumentsToBeTested(42, "UnitTest");
+
+            // Assert
+            mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+                s.Equals("Init: SatisfiabilityTest.LoggingAttributeTest+ClassUnderTest.MethodWith2ArgumentsToBeTested [2] params"))), Times.Exactly(1));
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: []"))), Times.Exactly(1));
+            mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Exactly(2));
+            mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
         #region Helper --------------------------------------------------------
 
         [Logging]
