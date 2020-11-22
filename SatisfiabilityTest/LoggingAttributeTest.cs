@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using NLog;
@@ -67,9 +69,23 @@ namespace SatisfiabilityTest
         [Logging]
         private class ClassUnderTest
         {
-            public void MethodToBeTested()
-            {
+            public void MethodToBeTested() {}
+            
+            public void MethodWith2ArgumentsToBeTested(int firstArgument, string secondArgument) {}
 
+            public int MethodWithReturnValueToBeTested()
+            {
+                return 42; 
+            }
+
+            public void MethodThatThrowsExceptionToBeTested()
+            {
+                throw new Exception("UnitTestException");
+            }
+
+            public Task<int> AsyncMethodToBeTested()
+            {
+                return Task.FromResult(42);
             }
         }
 
