@@ -54,8 +54,12 @@ namespace SatisfiabilityTest
             classUnderTest.MethodToBeTested();
 
             // Assert
-            mockedLogger.Verify(m => m.Info(It.IsAny<string>()), Times.AtLeastOnce);
-
+            mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Info(It.IsAny<string>()), Times.Exactly(2));
+            mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
 
         #region Helper --------------------------------------------------------
