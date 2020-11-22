@@ -25,6 +25,10 @@ namespace Satisfiability.Common
             {
                 t.ContinueWith(task => Logger.Info($"Exit: [{args.ReturnValue}]"));
             }
+            else
+            {
+                Logger.Info($"Exit: [{args.ReturnValue}]");
+            }
         }
 
         public override void OnException(MethodExecutionArgs args)
