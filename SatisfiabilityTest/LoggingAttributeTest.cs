@@ -143,7 +143,7 @@ namespace SatisfiabilityTest
         }
 
         [TestMethod]
-        public async Task Test_0006_AsyncReturnValueIsLogged()
+        public async Task Test_0006_AsyncReturnIsLogged()
         {
             // Arrange 
             var mockedLogger = new Mock<ILogger>();
@@ -195,6 +195,34 @@ namespace SatisfiabilityTest
             mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
 
+        [TestMethod]
+        public async Task Test_0008_ExceptionInAsyncMethodIsLogged()
+        {
+            // Arrange 
+            var mockedLogger = new Mock<ILogger>();
+            var classUnderTest = new ClassUnderTest();
+
+            SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
+
+            // Act
+            try
+            {
+                await classUnderTest.AsyncMethodThatThrowsExceptionToBeTested();
+            }
+            catch (Exception e)
+            {
+                Assert.IsInstanceOfType(e, typeof(Exception));
+            }
+
+            // Assert
+            mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Error(It.Is<string>(s => s.Equals("OnException: System.Exception: UnitTestException"))), Times.Once);
+            mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+                s.Equals("Init: SatisfiabilityTest.LoggingAttributeTest+ClassUnderTest.AsyncMethodThatThrowsExceptionToBeTested [0] params"))), Times.Once);
+            mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
         #region Helper --------------------------------------------------------
 
         [Logging]
@@ -222,6 +250,11 @@ namespace SatisfiabilityTest
             public Task AsyncMethodWithoutReturnValueToBeTested()
             {
                 return Task.Delay(100);
+            }
+
+            public Task AsyncMethodThatThrowsExceptionToBeTested()
+            {
+                throw new Exception("UnitTestException");
             }
         }
 

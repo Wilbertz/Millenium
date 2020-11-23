@@ -29,21 +29,14 @@ namespace Satisfiability.Common
             {
                 t.ContinueWith(task =>
                 {
-                    if (task.Exception != null)
+                    if (task.GetType().IsGenericType)
                     {
-                        Logger.Error($"OnException: {task.Exception.GetType()}: {task.Exception.Message}");
+                        dynamic taskWithResult = task;
+                        Logger.Info($"Exit: [{taskWithResult.Result}]");
                     }
                     else
                     {
-                        if (task.GetType().IsGenericType)
-                        {
-                            dynamic taskWithResult = task;
-                            Logger.Info($"Exit: [{taskWithResult.Result}]");
-                        }
-                        else
-                        {
-                            Logger.Info($"Exit: []");
-                        }
+                        Logger.Info($"Exit: []");
                     }
                 });
             }
