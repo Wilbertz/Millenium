@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Reflection;
+using System.Threading.Tasks;
 
 using MethodBoundaryAspect.Fody.Attributes;
 using NLog;
@@ -28,13 +29,21 @@ namespace Satisfiability.Common
             {
                 t.ContinueWith(task =>
                 {
-                    if (args.ReturnValue is Task<object> returnValue)
+                    if (task.Exception != null)
                     {
-                        Logger.Info($"Exit: [{args.ReturnValue}]");
+                        Logger.Error($"OnException: {task.Exception.GetType()}: {task.Exception.Message}");
                     }
                     else
                     {
-                        Logger.Info($"Exit: []");
+                        if (task.GetType().IsGenericType)
+                        {
+                            dynamic taskWithResult = task;
+                            Logger.Info($"Exit: [{taskWithResult.Result}]");
+                        }
+                        else
+                        {
+                            Logger.Info($"Exit: [{task}]");
+                        }
                     }
                 });
             }
