@@ -26,7 +26,17 @@ namespace Satisfiability.Common
         {
             if (args.ReturnValue is Task t)
             {
-                t.ContinueWith(task => Logger.Info($"Exit: [{args.ReturnValue}]"));
+                t.ContinueWith(task =>
+                {
+                    if (args.ReturnValue is Task<object> returnValue)
+                    {
+                        Logger.Info($"Exit: [{args.ReturnValue}]");
+                    }
+                    else
+                    {
+                        Logger.Info($"Exit: []");
+                    }
+                });
             }
             else
             {

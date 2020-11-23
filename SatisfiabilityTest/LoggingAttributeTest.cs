@@ -117,6 +117,60 @@ namespace SatisfiabilityTest
             mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
 
+        [TestMethod]
+        public async Task Test_0005_AsyncReturnValueIsLogged()
+        {
+            // Arrange 
+            var mockedLogger = new Mock<ILogger>();
+            var classUnderTest = new ClassUnderTest();
+
+            SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
+
+            // Act
+            var result = await classUnderTest.AsyncMethodToBeTested();
+
+            // Assert
+            Assert.AreEqual(42, result);
+
+            mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+                s.Equals("Init: SatisfiabilityTest.LoggingAttributeTest+ClassUnderTest.AsyncMethodToBeTested [0] params"))), Times.Once);
+            mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: [42]"))), Times.Once);
+            mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
+
+        [TestMethod]
+        public async Task Test_0006_ExceptionIsLogged()
+        {
+            // Arrange 
+            var mockedLogger = new Mock<ILogger>();
+            var classUnderTest = new ClassUnderTest();
+
+            SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
+
+            // Act
+            try
+            {
+                classUnderTest.MethodThatThrowsExceptionToBeTested();
+            }
+            catch (Exception e)
+            {
+                Assert.IsInstanceOfType(e, typeof(Exception));
+            }
+
+            // Assert
+            mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Error(It.Is<string>(s => s.Equals("OnException: System.Exception: UnitTestException"))), Times.Once);
+            mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+                s.Equals("Init: SatisfiabilityTest.LoggingAttributeTest+ClassUnderTest.MethodThatThrowsExceptionToBeTested [0] params"))), Times.Once);
+            mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
+
         #region Helper --------------------------------------------------------
 
         [Logging]
