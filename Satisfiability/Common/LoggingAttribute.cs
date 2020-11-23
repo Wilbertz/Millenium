@@ -42,7 +42,7 @@ namespace Satisfiability.Common
                         }
                         else
                         {
-                            Logger.Info($"Exit: [{task}]");
+                            Logger.Info($"Exit: []");
                         }
                     }
                 });
