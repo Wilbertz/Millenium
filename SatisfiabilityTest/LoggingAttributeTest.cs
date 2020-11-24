@@ -47,7 +47,7 @@ namespace SatisfiabilityTest
         public void Test_0002_MethodCallIsLogged()
         {
             // Arrange 
-            var mockedLogger = new Mock<ILogger>();
+            var mockedLogger = GetLogger();
             var classUnderTest = new ClassUnderTest();
 
             SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
@@ -70,7 +70,7 @@ namespace SatisfiabilityTest
         public void Test_0003_MethodArgumentsAreLogged()
         {
             // Arrange 
-            var mockedLogger = new Mock<ILogger>();
+            var mockedLogger = GetLogger();
             var classUnderTest = new ClassUnderTest();
 
             SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
@@ -95,7 +95,7 @@ namespace SatisfiabilityTest
         public void Test_0004_ReturnValueIsLogged()
         {
             // Arrange 
-            var mockedLogger = new Mock<ILogger>();
+            var mockedLogger = GetLogger();
             var classUnderTest = new ClassUnderTest();
 
             SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
@@ -121,7 +121,7 @@ namespace SatisfiabilityTest
         public async Task Test_0005_AsyncReturnValueIsLogged()
         {
             // Arrange 
-            var mockedLogger = new Mock<ILogger>();
+            var mockedLogger = GetLogger();
             var classUnderTest = new ClassUnderTest();
 
             SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
@@ -146,7 +146,7 @@ namespace SatisfiabilityTest
         public async Task Test_0006_AsyncReturnIsLogged()
         {
             // Arrange 
-            var mockedLogger = new Mock<ILogger>();
+            var mockedLogger = GetLogger();
             var classUnderTest = new ClassUnderTest();
 
             SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
@@ -170,7 +170,7 @@ namespace SatisfiabilityTest
         public void Test_0007_ExceptionIsLogged()
         {
             // Arrange 
-            var mockedLogger = new Mock<ILogger>();
+            var mockedLogger = GetLogger();
             var classUnderTest = new ClassUnderTest();
 
             SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
@@ -199,7 +199,7 @@ namespace SatisfiabilityTest
         public async Task Test_0008_ExceptionInAsyncMethodIsLogged()
         {
             // Arrange 
-            var mockedLogger = new Mock<ILogger>();
+            var mockedLogger = GetLogger();
             var classUnderTest = new ClassUnderTest();
 
             SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
@@ -223,6 +223,29 @@ namespace SatisfiabilityTest
             mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
             mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
+
+        [TestMethod]
+        public async Task Test_0009_NestedMethodsAreLoggedWithCorrectIndentationLogged()
+        {
+            // Arrange 
+            var mockedLogger = GetLogger();
+            var classUnderTest = new ClassUnderTest();
+
+            SetLoggingInterfaceInAttributeOfClassUnderTest(mockedLogger.Object);
+
+            // Act
+
+            classUnderTest.NestedMethodToBeTested1();
+           
+            // Assert
+            mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            //mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+            //    s.Equals("Init: SatisfiabilityTest.LoggingAttributeTest+ClassUnderTest.AsyncMethodThatThrowsExceptionToBeTested [0] params"))), Times.Once);
+            //mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            //mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
+
         #region Helper --------------------------------------------------------
 
         [Logging]
@@ -235,6 +258,25 @@ namespace SatisfiabilityTest
             public int MethodWithReturnValueToBeTested()
             {
                 return 42; 
+            }
+
+            public void NestedMethodToBeTested1()
+            {
+                NestedMethodToBeTested2();
+            }
+            public void NestedMethodToBeTested2()
+            {
+                NestedMethodToBeTested3();
+            }
+
+            public void NestedMethodToBeTested3()
+            {
+                NestedMethodToBeTested4();
+            }
+
+            public void NestedMethodToBeTested4()
+            {
+
             }
 
             public void MethodThatThrowsExceptionToBeTested()
@@ -263,6 +305,20 @@ namespace SatisfiabilityTest
             typeof(LoggingAttribute)
                 .GetField("Logger", BindingFlags.Static | BindingFlags.NonPublic)
                 ?.SetValue(null, logger);
+        }
+
+        private Mock<ILogger> GetLogger()
+        {
+            var mockedLogger = new Mock<ILogger>();
+
+            mockedLogger.Setup(m => m.Fatal(It.IsAny<string>())).Callback<string>(Console.WriteLine);
+            mockedLogger.Setup(m => m.Error(It.IsAny<string>())).Callback<string>(Console.WriteLine);
+            mockedLogger.Setup(m => m.Warn(It.IsAny<string>())).Callback<string>(Console.WriteLine);
+            mockedLogger.Setup(m => m.Info(It.IsAny<string>())).Callback<string>(Console.WriteLine);
+            mockedLogger.Setup(m => m.Debug(It.IsAny<string>())).Callback<string>(Console.WriteLine);
+            mockedLogger.Setup(m => m.Trace(It.IsAny<string>())).Callback<string>(Console.WriteLine);
+
+            return mockedLogger;
         }
 
         #endregion

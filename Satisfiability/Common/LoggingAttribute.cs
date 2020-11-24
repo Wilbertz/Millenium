@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 using MethodBoundaryAspect.Fody.Attributes;
@@ -12,14 +14,23 @@ namespace Satisfiability.Common
 
         public override void OnEntry(MethodExecutionArgs args)
         {
+            if (args.MethodExecutionTag == null)
+            {
+                args.MethodExecutionTag = 0;
+            }
+            else
+            {
+                args.MethodExecutionTag = (int)args.MethodExecutionTag + 1;
+            }
+
             if (!(args.Method.DeclaringType is null))
             {
                 Logger.Info(
-                    $"Init: {args.Method.DeclaringType.FullName}.{args.Method.Name} [{args.Arguments.Length}] params");
+                    $"{GetIndentation((int)args.MethodExecutionTag)}Init: {args.Method.DeclaringType.FullName}.{args.Method.Name} [{args.Arguments.Length}] params");
             }
             foreach (var item in args.Method.GetParameters())
             {
-                Logger.Debug($"{item.Name}: {args.Arguments[item.Position]}");
+                Logger.Debug($"{GetIndentation((int)args.MethodExecutionTag)}{item.Name}: {args.Arguments[item.Position]}");
             }
         }
 
@@ -42,13 +53,19 @@ namespace Satisfiability.Common
             }
             else
             {
-                Logger.Info($"Exit: [{args.ReturnValue}]");
+                Logger.Info($"{GetIndentation((int)args.MethodExecutionTag)}Exit: [{args.ReturnValue}]");
             }
+            args.MethodExecutionTag = (int)args.MethodExecutionTag - 1;
         }
 
         public override void OnException(MethodExecutionArgs args)
         {
             Logger.Error($"OnException: {args.Exception.GetType()}: {args.Exception.Message}");
+        }
+
+        private string GetIndentation(int count)
+        {
+            return String.Concat(Enumerable.Repeat("   ", count));
         }
     }
 }
