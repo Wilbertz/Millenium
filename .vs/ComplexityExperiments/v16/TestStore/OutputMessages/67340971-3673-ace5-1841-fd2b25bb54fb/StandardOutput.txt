@@ -1,0 +1,57 @@
+2020-11-25 11:32:31.8631 31 INFO | Init: Satisfiability.Clause.CheckConstructorArguments [2] params
+2020-11-25 11:32:31.8631 31 DEBUG | variables: System.Int32[]
+2020-11-25 11:32:31.8786 31 DEBUG | negatedVariables: System.Int32[]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.set_Variables [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | value: System.Collections.Generic.HashSet`1[System.Int32]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.set_NegatedVariables [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | value: System.Collections.Generic.HashSet`1[System.Int32]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.CheckConstructorArguments [2] params
+2020-11-25 11:32:31.8786 31 DEBUG | variables: System.Int32[]
+2020-11-25 11:32:31.8786 31 DEBUG | negatedVariables: System.Int32[]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.set_Variables [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | value: System.Collections.Generic.HashSet`1[System.Int32]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.set_NegatedVariables [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | value: System.Collections.Generic.HashSet`1[System.Int32]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Formula.set_Clauses [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | value: System.Collections.Generic.List`1[Satisfiability.IClause]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Formula.SubstituteAsFalse [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | variable: 1
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Formula.get_Clauses [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.List`1[Satisfiability.IClause]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Formula.get_Clauses [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.List`1[Satisfiability.IClause]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.SubstituteAsFalse [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | variable: 1
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_Variables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_NegatedVariables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_Variables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_NegatedVariables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_NegatedVariables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.SubstituteAsFalse [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | variable: 1
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_Variables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_NegatedVariables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_Variables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.set_IsUnsat [1] params
+2020-11-25 11:32:31.8786 31 DEBUG | value: True
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Init: Satisfiability.Clause.get_NegatedVariables [0] params
+2020-11-25 11:32:31.8786 31 INFO | Exit: [System.Collections.Generic.HashSet`1[System.Int32]]
+2020-11-25 11:32:31.8786 31 INFO | Exit: []
+2020-11-25 11:32:31.8786 31 INFO | Exit: []

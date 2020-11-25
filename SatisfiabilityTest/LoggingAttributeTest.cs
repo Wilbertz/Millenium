@@ -17,6 +17,8 @@ namespace SatisfiabilityTest
     {
         #region Fields and Properties -----------------------------------------
 
+        private const string Indentation = "   ";
+
         /// <summary>
         /// Gets or sets the test context which provides
         /// information about and functionality for the current test run.
@@ -225,7 +227,7 @@ namespace SatisfiabilityTest
         }
 
         [TestMethod]
-        public async Task Test_0009_NestedMethodsAreLoggedWithCorrectIndentationLogged()
+        public void Test_0009_NestedMethodsAreLoggedWithCorrectIndentationLogged()
         {
             // Arrange 
             var mockedLogger = GetLogger();
